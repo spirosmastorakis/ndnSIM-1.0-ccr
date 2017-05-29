@@ -1,12 +1,12 @@
 ## -*- Mode: python; py-indent-offset: 4; indent-tabs-mode: nil; coding: utf-8; -*-
-# 
+#
 # Copyright (c) 2011-2013, Regents of the University of California
 #                          Alexander Afanasyev
-# 
+#
 # GNU 3.0 license, See the LICENSE file for more information
-# 
+#
 # Author: Alexander Afanasyev <alexander.afanasyev@ucla.edu>
-# 
+#
 
 def build(bld):
     # This may be necessary for visualizer to work
@@ -17,6 +17,27 @@ def build(bld):
 
     obj = bld.create_ns3_program('ndn-csma', all_modules)
     obj.source = 'ndn-csma.cc'
+
+    obj = bld.create_ns3_program('ndn-test', all_modules)
+    obj.source = 'ndn-test.cc'
+
+    obj = bld.create_ns3_program('ndn-test-lru', all_modules)
+    obj.source = 'ndn-test-lru.cc'
+
+    obj = bld.create_ns3_program('ndn-test-fifo', all_modules)
+    obj.source = 'ndn-test-fifo.cc'
+
+    obj = bld.create_ns3_program('ndn-test-best-route', all_modules)
+    obj.source = 'ndn-test-best-route.cc'
+
+    obj = bld.create_ns3_program('ndn-test-multicast', all_modules)
+    obj.source = 'ndn-test-multicast.cc'
+
+    obj = bld.create_ns3_program('ndn-test-consumer-zipf', all_modules)
+    obj.source = 'ndn-test-consumer-zipf.cc'
+
+    obj = bld.create_ns3_program('ndn-test-consumer-cbr', all_modules)
+    obj.source = 'ndn-test-consumer-cbr.cc'
 
     obj = bld.create_ns3_program('ndn-grid', all_modules)
     obj.source = 'ndn-grid.cc'
